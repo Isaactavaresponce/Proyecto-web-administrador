@@ -1,0 +1,35 @@
+<body>
+	<div class="container w-50 px-5 pb-5 my-5">
+		<div class="row">
+			<div class="col">
+				<h1 class="fw-bold text-center pt-5 mb-5"> Registro de productos </h1>
+				<form class="form" action="/registraTipo" method="post" onsubmit="return validar ();">
+
+
+					<div class="mb-4">
+						<label for="tipo" class="form-label"> Tipo de articulo</label>
+						<input type="int" name="tipo" class="form-control text-bg-light"
+							minlength="1" maxlength="1" required>
+					</div>
+
+					<div class="mb-4">
+						<label for="descripcion" class="form-label"> Descripcion </label>
+						<input type="text" name="descripcion" class="form-control text-bg-light"
+							minlength="5" maxlength="40" required>
+					</div>
+
+					{{#if error}}
+						<p class="submitError">{{error}}</p>
+					{{/if}}
+
+					<div class="d-grid">
+						<button type="submit" class="btn submitButton"> Registrar nuevo tipo de producto </button>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+

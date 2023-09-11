@@ -1,0 +1,43 @@
+<!-- Cuerpo del archivo -->
+<body>
+
+	<!-- Se crea una separacion para contener la informacion de la tabla -->
+	<div class="container w-50 px-5 py-5 my-5">
+		<!-- Se crea una tabla -->
+		<table class="table table-striped">
+			<!-- Titulo de la tabla -->
+			<h1 style="float: left;">
+				Tipo de articulos
+			</h1>
+
+			<!-- Se crea el encabezado de la tabla -->
+			<thead>
+				<!-- Se crea una fila en la cabezera -->
+				<tr style="border-color: rgb(14, 14, 14); background-color:#d8d6d6">
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Tipo Articulo </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Descripcion </th>
+				</tr>
+			</thead>
+
+			<!-- Se crea el cuerpo de la tabla -->
+			<tbody>
+				<!--Busca dentro de los json -->
+				{{#each per}}
+				<!-- Se crea una fila en la cabezera -->
+				<tr>
+					<!-- Se crea una celda que contiene datos -->
+					<td style="color: #1e1e24; background-color: white">{{tipo}}</td>
+					<!-- Se crea una celda que contiene datos -->
+					<td style="color: #1e1e24; background-color: white">{{descripcion_tip}}</td>
+
+				</tr>
+				{{/each}}
+			</tbody>
+			
+
+		</table>
+	</div>
+</body>
+

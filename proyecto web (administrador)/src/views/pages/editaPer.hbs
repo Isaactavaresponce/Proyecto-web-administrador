@@ -1,0 +1,79 @@
+<!-- Llama a un archivo js-->
+<script src="/js/validacion.js"></script>
+<!-- Se crea el cuepo del archivo -->
+<body>
+	<!-- Llama a un archivo js-->
+	<script src="/src/public/js/script"></script>
+	<!-- Se crea una division-->
+	<div class="container w-75 px-5 pb-5 my-5">
+		<div class="row">
+			<div class="col">
+				<!-- Titulo del formulario -->
+				<h1 class="fw-bold text-center pt-5 mb-5"> Edicion de personal </h1>
+				<!-- Ser crea un siclo que busca en todos los archivos json y escribe los datos -->
+				{{#each per}}
+				<!-- Se crea un formulario con la funcion de editar -->
+				<form class="form" action="/editar/{{idUser}}" method="post" onsubmit="return validars ();">
+
+					<div class=" mb-4">
+						<label for="apellido" class="form-label"> Apellido(s) </label>
+						<input  value="{{apellido}}" type="text" id="apellido" name="apellido"
+							class="form-control text-bg-light"
+							pattern="[A-Z a-z áéíóúÁÉÍÓÚñÑ]*" minlength="3" maxlength="40" required>
+					</div>
+
+					<div class="mb-4">
+						<label for="nombre" class="form-label"> Nombre </label>
+						<input  value="{{nombre}}" type="text" id="nombre" name="nombre"
+							class="form-control text-bg-light" 
+							pattern="[A-Z a-z áéíóúÁÉÍÓÚñÑ]*" minlength="3" maxlength="30" required>
+					</div>
+
+					<div class="mb-4">
+						<label for="telefono" class="form-label"> Número de teléfono </label>
+						<input  value="{{telefono}}" type="tel" id="tel" name="telefono"
+							class="form-control text-bg-light" minlength="10" maxlength="10" required>
+					</div>
+
+					<div class="mb-4">
+						<label for="email" class="form-label"> Email </label>
+						<input value="{{email}}" type="email" id="email" name="email" class="form-control text-bg-light"
+							minlength="0" maxlength="50" required>
+					</div>
+
+					<div class="mb-4">
+						<label for="password" class="form-label"> Contraseña </label>
+						<input  placeholder="Si no se requiere cambiar la contraseña deje este campo vacio"
+							type="password" id="password" name="password" class="form-control text-bg-light"
+							placeholder="" minlength="8" maxlength="25">
+					</div>
+
+					<div class="mb-4">
+						<label for="rol" class="form-label"> Rol </label>
+						<select id="rol" name="rol" class="form-control text-bg-light"
+							minlength="1" maxlength="1" required >
+							<option>{{rol}}</option>
+							<option value="p">Personal</option> 
+							<option value="a">Administrador</option>
+						</select requiered>
+					</div>
+
+					<!-- Se cierra el siclo-->
+					{{/each}}
+
+					<!-- Si se encuentra un error muestra el error -->
+					{{#if error}}
+						<p class="submitError">{{error}}</p>
+					{{/if}}
+
+					<div class="d-grid">
+						<button type="submit" class="btn submitButton"> Guardar cambios </button>
+					</div>
+
+
+				</form>
+			</div>
+		</div>
+	</div>
+
+</body>

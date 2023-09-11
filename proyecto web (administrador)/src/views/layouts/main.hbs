@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <!-- Se llama al boostrap-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <title> Proyecto web </title>
+</head>
+
+<!-- Ser agregan estilos al los archivos -->
+<style>
+  a {
+    text-decoration: none;
+    color: rgb(255, 208, 0);
+  }
+
+  .background {
+    background-color: rgb(214, 214, 214);
+    /*background-image: url(./images/fondo.jpg);*/
+    width: 100%;
+    left: 100%;
+    background-size:contain;
+    background-size:cover;
+  }
+
+  .form-label{
+    margin: center;
+  }
+
+  body {
+    background: rgb(105, 105, 105);
+  }
+
+  .btn {
+    font-weight: bold;
+    border-style: none;
+  }
+
+  .submitButton {
+    padding-top:10px;
+    padding-bottom:10px;
+    padding-left:40px;
+    padding-right:40px;
+    background-color: #ffa600;
+    color: white;
+  }
+
+  .submitButton:hover {
+    background-color: #ffb936;
+    color: rgb(58, 58, 58);
+  }
+
+  .container {
+    border-radius: 10px;
+    background: rgb(255, 255, 255);
+    margin-top: 50px;
+  }
+
+  h2 {
+    color: rgb(0, 0, 0);
+    margin-left: 10px;
+		margin-top: 10px;
+		margin: -10px;
+  
+  }
+
+  .form-control {
+    background-color: rgba(255, 255, 255, 0);
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-color: black;
+  }
+
+  label,
+  span {
+    color: rgb(61, 61, 61);
+  }
+
+  .pillButton {
+    color: rgb(170, 170, 170);
+  }
+
+  .pillButton:focus,
+  .pillButton:hover {
+    color: #ffb936;
+  }
+
+  .submitError {
+    color: rgb(255, 113, 113);
+    font-weight: bold;
+  }
+
+  body {
+    background-color: rgb(255, 255, 255);
+  }
+
+  .editar-personal, .alta-personal, .editar-menu, .editar-personal, .alta-menu{ 
+    background-color: rgb(226, 226, 226); 
+    }
+
+  .dropdown-item{
+    border: none;
+    border-radius: 20px;
+    text-decoration:none;
+    font-weight:600;
+    font-size:20px;
+    color:#ffffff;
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:40px;
+    padding-right:40px;
+    background-color:#ffa600e0;
+  }
+  .dropdown-item:hover{
+    background-color: #fdaf1da6;
+    color: black;
+  }
+
+  .dropdown{
+    border-style: none;
+  }
+
+  .nav-link{
+    border-radius: 5px;
+    font-size:18px;
+    color:#3b3b3bd8;
+  }
+  .nav-link:hover{
+    background-color: #ffa600a6;
+  }
+
+ .img{
+    width: 50px;
+		
+ }
+
+ .botones{
+  width: 100px;
+  height: 500px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-size:50px;
+  
+ }
+
+</style>
+
+
+<body>
+
+  <!-- Barra de navegación principal -->
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          {{#if r}}
+          <a class="nav-link" href="/">Regresar</a>
+          {{else}}
+          <a class="nav-link" href="/acerca">Acerca de nosotros</a>
+          {{/if}}
+
+            {{#if name}}
+
+            <a href="/" class="buttonLink">
+              <button type="button" class="btn me-2">
+                Home
+              </button>
+            </a>
+
+            <a href="/logout" class="buttonLink">
+              <button type="button" class="btn me-2">
+                Cerrar sesión
+              </button>
+            </a>
+
+            </div>
+
+            <h1>{{name}}</h1>
+
+            {{/if}}
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Barra de navegación como personal -->
+
+
+
+  {{{body}}}
+
+</body>
+
+</html>

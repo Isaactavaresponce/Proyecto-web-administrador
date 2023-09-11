@@ -1,0 +1,38 @@
+<body>
+
+    <div class="container w-100 px-5 py-5 my-5">
+        <table class="table table-striped">
+
+            <h1 style="float: left;" class="mb-5">
+			    Tipo unidad
+			</h1>
+
+            <thead>
+				<!-- Se crea una fila en la cabezera -->
+				<tr style="border-color: rgb(14, 14, 14); background-color:#d8d6d6">
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Tipo Unidad </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Descripcion </th>
+				</tr>
+			</thead>
+
+            <tbody>
+                    
+				<!--Busca dentro de los json -->
+				{{#each per}}
+				<!-- Se crea una fila en la cabezera -->
+				<tr>
+					<!-- Se crea una celda que contiene datos -->
+					<td style="color: #1e1e24; background-color: white">{{unidad}}</td>
+					<!-- Se crea una celda que contiene datos -->
+					<td style="color: #1e1e24; background-color: white">{{nombre_uni}}</td>
+				</tr>
+				{{/each}}
+			</tbody>
+				
+
+        </table>
+    </div>
+
+</body>

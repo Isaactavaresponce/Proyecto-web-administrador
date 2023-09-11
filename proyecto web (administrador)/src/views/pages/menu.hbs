@@ -1,0 +1,89 @@
+<!-- Cuerpo del archivo -->
+<body>
+	<style>
+		.filtro{
+    display: none;
+	}
+	</style>
+	<!-- Se crea una separacion -->
+	<div class="container w-100 px-5 py-5 my-5">
+		<!-- Se crea una tabla para los articulos -->
+		<table class="table table-striped">
+			<!-- Titulo para la tabla -->
+			<h1 style="float: left;" class="mb-5">
+			Articulos
+			</h1>
+
+			<!-- Enlace hacias el archivo de altaProducto -->
+			<a href="/altaProducto">
+				<!-- Boton -->
+				<button class="btn  btn-primary mt-2 mx-3" style="float: left;">
+					+
+				</button>
+			</a>
+
+			<nav class="navbar navbar-light bg-white">
+				<form class="form-inline">
+					<input class="form-control " type="search" placeholder="🔍︎  Buscador" aria-label="Search" style="width: 500px;" id="buscador">
+				</form>
+			</nav>	
+
+			<!-- Se crea el encabezado de la tabla -->
+			<thead>
+				<!-- Se crea una fila en la cabezera -->
+				<tr style="border-color: rgb(14, 14, 14); background-color:#d8d6d6">
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> ID Articulo </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Nombre </th>
+					<th scope="col" style="color:#1e1e24;">Imagen </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Editar </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Borrar </th>
+				</tr>
+			</thead>
+
+			<!-- Se crea el cuerpo de la tabla -->
+			<tbody>
+				<!--Busca dentro de los json -->
+				{{#each per}}
+				<!-- Se crea una fila en la cabezera -->
+				<tr id="articulos">
+					<!-- Se crea una celda que contiene datos -->
+					<td style="color: #1e1e24; background-color: white">{{id_art}}</td>
+					<!-- Se crea una celda que contiene datos -->
+					<td id="articulo" style="color: #1e1e24; background-color: white">{{nombre}}</td>
+					<td id="articulo" style="color: #1e1e24; background-color: white"><img height="50px" width="50px" src="{{image}}" alt="imagen~"></td>
+
+					<!-- Se crea una celda que contiene datos -->
+					<td>
+						<!-- Enlace a la funcion de edita  -->
+						<a href="/editarMen/{{id_art}}">
+						<!-- Boton -->
+							<button type="button" class="btn btn-primary me-2">
+								Editar
+							</button>
+						</a>
+					</td>
+
+					<!-- Se crea una celda que contiene datos -->
+					<td>
+						<!-- Enlace a la funcion de edita  -->
+						<a href="/eliminaMen/{{id_art}}">
+							<!-- Boton -->
+							<button type="button" class="btn btn-danger me-2">
+								Baja
+							</button>
+						</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+				
+
+		</table>
+	</div>
+	<script src="./js/filtro.js"></script>
+</body>
+

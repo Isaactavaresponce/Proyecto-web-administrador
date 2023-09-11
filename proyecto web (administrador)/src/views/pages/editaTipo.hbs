@@ -1,0 +1,43 @@
+<!-- Cuerpo del archivo -->
+<body>
+	<!-- Se crea una division -->
+	<div class="container w-50 px-5 pb-5 my-5">
+		<!-- Se crea una division -->
+		<div class="row">
+			<!-- Se crea una division -->
+			<div class="col">
+				<!-- Se crea el titulo para el formulario -->
+				<h1 class="fw-bold text-center pt-5 mb-5"> Editar productos </h1>
+				<!--Busca dentro de los json -->
+                {{#each per}}
+				<!-- Se crea un formulario con la funcion de editar -->
+				<form class="form" action="/editarTipo/{{tipo}}" method="post" onsubmit="return validar();">
+
+					<!-- Se crea una separacion para el campo de descripcion -->
+					<div class="mb-4">
+						<!-- Se crea una etiqueta -->
+						<label for="descripcion" class="form-label"> Descripcion </label>
+						<!-- Se muestra la informacio que contiene este campo en la base de datos segun el id del tipo de producto -->
+						<input value="{{descripcion}}" type="text" name="descripcion" class="form-control text-bg-light"
+							minlength="1" maxlength="40" required>
+					</div>
+
+
+					{{#if error}}
+						<p class="submitError">{{error}}</p>
+					{{/if}}
+
+					<!-- Se crea una division para el boton -->
+					<div class="d-grid">
+						<!-- Boton -->
+						<button type="submit" class="btn submitButton"> Guardar cambios </button>
+					</div>
+
+
+				</form>
+                {{/each}}
+			</div>
+		</div>
+	</div>
+</body>
+	

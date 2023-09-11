@@ -1,0 +1,87 @@
+<!-- Se crea el cuerpo del archivo -->
+<body>
+	<style>
+		.filtro{
+    display: none;
+	}
+	</style>
+	<!-- Se crea una separacion para contener la informacion de la tabla -->
+	<div class="container w-100 px-5 py-5 my-1">
+		<!-- Se crea una tabla para el personal -->
+		<table class="table table-striped">
+			<!-- Titulo para la tabla -->
+			<h1 style="float: left;" class="mb-5">
+			Personal
+			</h1>
+
+			<!-- Enlace al archivo del altaPersonal -->
+			<a href="/altaPersonal">
+				<!-- Boton -->
+				<button class="btn btn-primary mt-2 mx-3" style="float: left;">
+					+
+				</button>
+			</a>
+
+			<nav class="navbar navbar-light bg-white">
+				<form class="form-inline">
+					<input class="form-control " type="search" placeholder="🔍︎  Buscador" aria-label="Search" style="width: 500px;" id="buscador">
+				</form>
+			</nav>	
+
+			<!-- Se crea el encabezado de la tabla -->
+			<thead>
+				<!-- Se crea una fila en la cabezera -->
+				<tr style="border-color: rgb(14, 14, 14); background-color:#d8d6d6">
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> ID Usuario </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Nombre </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Editar </th>
+					<!-- Se crea una celda en el encabezado-->
+					<th scope="col" style="color:#1e1e24;"> Borrar </th>
+				</tr>
+			</thead>
+
+			<!-- Se crea el cuerpo de la tabla -->
+			<tbody>
+				<!--Busca dentro de los json -->
+				{{#each per}}
+				<!-- Se crea una fila en la cabezera -->
+				<tr id="articulos" >
+					<!-- Se crea una celda que contiene datos -->
+					<td style="color: #1e1e24; background-color: white">{{idUser}}</td>
+					<!-- Se crea una celda que contiene datos -->
+					<td id="articulo" style="color: #1e1e24; background-color: white">{{nombre}}</td>
+
+					<!-- Se crea una celda que contiene datos -->
+					<td style="background-color: white">
+						<!-- Enlace a la funcion edita -->
+						<a href="/editar/{{idUser}}">
+							<!-- Boton -->
+							<button type="button" class="btn btn-primary me-2">
+								Editar
+							</button>
+						</a>
+					</td>
+					
+					<!-- Se crea una celda que contiene datos -->
+					<td style="background-color: white">
+						<!-- Enlace a la funcion elimina -->
+						<a href="/elimina/{{idUser}}">
+							<!-- Boton -->
+							<button type="button" class="btn btn-danger me-2">
+								Baja
+							</button>
+						</a>
+					</td>
+				</tr>
+				{{/each}}
+			</tbody>
+			
+
+		</table>
+	</div>
+	<script src="./js/filtro.js"></script>
+</body>
+

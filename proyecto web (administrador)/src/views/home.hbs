@@ -1,0 +1,56 @@
+<!-- Cuerpo del archivp -->
+<body style="background-color:rgba(188, 188, 188, 0.603)">
+
+    <!-- Condicion mientras que el rol sea igual a A (administrador) se mostraran los sigientes botones -->
+    {{#if rolA}}
+
+        {{#if name}}
+
+        <div class="container align-x px-5 pt-5 pb-5 mb-3" style="width: 600px;">
+
+            <div class="" style="padding-top: 1%; padding-bottom: 1%;">
+                <button  style="border: none; background-color:rgb(255, 255, 255); width: 500px;">
+                    <a class="dropdown-item" href="/personal">Personal</a>
+                </button>
+                    
+            </div>
+
+            <div class="" style="padding-top: 1%; padding-bottom: 1%;">
+                <button  style="border: none; background-color:rgb(255, 255, 255); width: 500px;">
+                    <a class="dropdown-item" href="/tipoArt">Tipo de articulo</a>
+                </button>
+
+            </div>
+
+            <div class="" style="padding-top: 1%; padding-bottom: 1%;">
+                <button style="border: none; background-color:rgb(255, 255, 255); width: 500px;">
+                    <a class="dropdown-item" href="/menu">Articulos</a>
+                </button>
+                    
+            </div>
+
+            <div class="" style="padding-top: 1%; padding-bottom: 1%;">
+                <button style="border: none; background-color:rgb(255, 255, 255); width: 500px;">
+                    <a class="dropdown-item" href="/unidad"> Tipo unidad</a>
+                </button>
+            </div>
+
+            <div class="" style="padding-top: 1%; padding-bottom: 1%;">
+                <button style="border: none; background-color:rgb(255, 0, 0); width: 500px;">
+                    <a class="dropdown-item" href="/pedidos"> pedidos</a>
+                </button>
+            </div>
+
+        </div>
+
+        {{/if}}
+    <!-- Si la condicion no se cumple se ejecuta lo sigiente -->
+    {{else}}
+
+        <!-- Se muestra un titulo con el nombre del personal -->
+        <h1>Hola {{name}}</h1>
+    
+    {{/if}}
+
+
+</body>
